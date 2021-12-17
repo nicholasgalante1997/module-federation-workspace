@@ -43,7 +43,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "host",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        remote: 'remote@http://localhost:8081/remoteEntry.js'
+      },
       exposes: {},
       shared: {
         ...deps,
@@ -55,6 +57,10 @@ module.exports = {
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
+        "react-query": {
+          singleton: true,
+          requiredVersion: deps["react-query"]
+        }
       },
     }),
     new HtmlWebPackPlugin({

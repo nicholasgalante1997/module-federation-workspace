@@ -7,4 +7,11 @@ body {
   margin: auto;
   max-width: 800px;
   margin-top: 20px;
+  background-color: deepskyblue;
+  border-radius: 0.25rem;
+  padding: 30px;
+}
+
+.host-text {
+  color: deeppink;
 }

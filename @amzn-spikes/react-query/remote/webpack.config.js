@@ -44,7 +44,9 @@ module.exports = {
       name: "remote",
       filename: "remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        './QueryConsumer': './src/QueryConsumer'
+      },
       shared: {
         ...deps,
         react: {
@@ -55,6 +57,10 @@ module.exports = {
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
+        "react-query": {
+          singleton: true,
+          requiredVersion: deps["react-query"]
+        }
       },
     }),
     new HtmlWebPackPlugin({
